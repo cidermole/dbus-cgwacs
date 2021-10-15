@@ -16,3 +16,13 @@ processAcquisitionData()
 
 // https://en.wikipedia.org/wiki/Modbus#Modbus_TCP_frame_format_(primarily_used_on_Ethernet_networks)
 
+
+readRegisters(int16 startReg, int16 count)
+    mModbus->readRegisters(ModbusRtu::ReadHoldingRegisters,
+	                   mAcSensor->slaveAddress(), startReg, count);
+
+// EasyModbusTCP.NET:
+
+public int[] ReadHoldingRegisters(int startingAddress, int quantity)
+
+
